@@ -36,7 +36,7 @@ body{
 
   #video {
     width: inherit;
-    height: 275px;
+    height: inherit;
     background-color: #666;
   }
 

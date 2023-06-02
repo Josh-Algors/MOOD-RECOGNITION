@@ -13,6 +13,8 @@ let emotionModel;
 function startVideo() {
     const videoElement = document.getElementById('video');
 
+    console.log(videoElement);
+
     return new Promise((resolve, reject) => {
         videoElement.addEventListener('loadeddata', () => {
             resolve(videoElement);
@@ -59,7 +61,7 @@ function detectEmotions() {
 
             // Draw face bounding box
             context.beginPath();
-            context.lineWidth = '5';
+            context.lineWidth = '10';
             context.strokeStyle = 'red';
             context.rect(start[0], start[1], size[0], size[0]);
             context.stroke();
@@ -69,6 +71,7 @@ function detectEmotions() {
             const faceContext = faceCanvas.getContext('2d');
             faceCanvas.width = 48;
             faceCanvas.height = 48;
+
             faceContext.drawImage(
                 videoElement,
                 start[0], start[1], size[0], size[1],
@@ -103,7 +106,7 @@ function detectEmotions() {
 
             // Display emotion label
             context.fillStyle = 'red';
-            context.font = '16px Arial';
+            context.font = '50px Arial';
             context.fillText(emotion, start[0], start[1] > 10 ? start[1] - 5 : 10);
 
             imgData = null;
@@ -117,15 +120,15 @@ function stop() {
    
     const videoElement = document.getElementById('video');
     videoElement.pause();
-    videoElement.srcObject = null;
+    // videoElement.srcObject = null;
 
-    canvas.style.display = 'none';
-    
-    if (videoStream) {
-        videoStream.getTracks().forEach((track) => {
-            track.stop();
-        });
-    }
+    // canvas.style.display = 'none';
+
+    // if (videoElement) {
+    //     videoElement.getTracks().forEach((track) => {
+    //         track.stop();
+    //     });
+    // }
     
 }
 
