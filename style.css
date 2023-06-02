@@ -22,14 +22,16 @@ body{
   }
 
   .flex-box{
-    max-width: 500px;
+    max-width: 640px;
+    max-height: 480px;
     position: relative;
     width: 100%;
+    height: 100%;
   }
 
  #container {
     width: inherit;
-    height: 275px;
+    height: 480px;
     border-radius: 4px;
     border: 10px #333 solid;
   }
@@ -42,8 +44,8 @@ body{
 
   #canvas {
     z-index: 10000;
-    width: inherit;
-    height: 275px;
+    width: 640px;
+    height: 480px;
   }
 
   .web-cam__controls {

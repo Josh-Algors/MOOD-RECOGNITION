@@ -13,7 +13,10 @@ let emotionModel;
 function startVideo() {
     const videoElement = document.getElementById('video');
 
-    console.log(videoElement);
+    const width = videoElement.width;
+    const height = videoElement.height;
+    videoElement.style.width = `${width}px`; // Add CSS width property
+    videoElement.style.height = `${height}px`; // Add CSS height property
 
     return new Promise((resolve, reject) => {
         videoElement.addEventListener('loadeddata', () => {
@@ -106,7 +109,7 @@ function detectEmotions() {
 
             // Display emotion label
             context.fillStyle = 'red';
-            context.font = '50px Arial';
+            context.font = '35px Arial';
             context.fillText(emotion, start[0], start[1] > 10 ? start[1] - 5 : 10);
 
             imgData = null;
