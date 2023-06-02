@@ -114,16 +114,19 @@ function detectEmotions() {
 
 // function to stop web cam
 function stop() {
-    var stream = video.srcObject;
-    var tracks = stream.getTracks();
+   
+    const videoElement = document.getElementById('video');
+    videoElement.pause();
+    videoElement.srcObject = null;
 
-    for (var i = 0; i < tracks.length; i++) {
-        var track = tracks[i];
-        track.stop();
+    canvas.style.display = 'none';
+    
+    if (videoStream) {
+        videoStream.getTracks().forEach((track) => {
+            track.stop();
+        });
     }
-
-    video.srcObject = null;
-    canvas.style.display = 'none'
+    
 }
 
 startButton.addEventListener('click', () => {
