@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Face Emotion Recognition</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.8.0/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface@0.0.7/dist/blazeface.min.js"></script>
+  <title>Face Emotion Recognition</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.8.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface@0.0.7/dist/blazeface.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Face Emotion Recognition</h1>
-    <div>
-      <video id="video" width="640" height="480" autoplay></video>
-    <canvas id="canvas" style="position: absolute" width="640" height="480"></canvas>
+  <div class="bg-element">
+    <div class="flex-box">
+      <div id="container">
+        <video id="video" width="640" height="480" autoplay></video>
+        <canvas id="canvas" style="position:absolute;" width="640" height="480"></canvas>
+        <div class="web-cam__controls">
+          <button class="btn start">Start</button>
+          <button class="btn stop">Stop</button>
+        </div>
+      </div>
     </div>
-    <script src="script.js"></script>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
